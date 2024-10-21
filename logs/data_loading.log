@@ -1,0 +1,81 @@
+2024-10-21 01:41:16,541 - INFO - Loading pandas dataframe
+2024-10-21 01:41:29,882 - INFO - Calculating summary statistics
+2024-10-21 01:41:57,422 - INFO - Calculating summary statistics
+2024-10-21 01:42:09,726 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2024-10-21 01:42:09,963 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2024-10-21 01:42:10,091 - INFO - Class distribution successfully plotted
+2024-10-21 01:42:25,355 - INFO - Plotting numerical distribution
+2024-10-21 01:42:40,051 - INFO - Numerical distribution plotted
+2024-10-21 01:46:01,367 - INFO - Plotting numerical distribution
+2024-10-21 01:46:13,987 - INFO - Numerical distribution plotted
+2024-10-21 01:47:01,903 - INFO - Plotting categorical distribution
+2024-10-21 02:36:39,417 - INFO - Loading pandas dataframe
+2024-10-21 02:37:38,951 - INFO - Plotting numerical distribution
+2024-10-21 02:37:45,122 - INFO - Numerical distribution plotted
+2024-10-21 02:38:33,337 - INFO - Plotting categorical distribution
+2024-10-21 15:12:39,549 - INFO - Loading pandas dataframe
+2024-10-21 15:13:01,194 - INFO - Plotting numerical distribution
+2024-10-21 15:13:05,352 - INFO - Numerical distribution plotted
+2024-10-21 15:13:52,904 - INFO - Plotting numerical distribution
+2024-10-21 15:13:57,177 - INFO - Numerical distribution plotted
+2024-10-21 15:14:04,838 - INFO - Plotting numerical distribution
+2024-10-21 15:14:09,239 - INFO - Numerical distribution plotted
+2024-10-21 15:14:18,539 - INFO - Plotting numerical distribution
+2024-10-21 15:14:22,772 - INFO - Numerical distribution plotted
+2024-10-21 15:14:48,275 - INFO - Plotting categorical distribution
+2024-10-21 15:19:57,033 - INFO - Loading pandas dataframe
+2024-10-21 15:20:03,535 - INFO - Plotting categorical distribution
+2024-10-21 15:56:42,342 - INFO - Loading pandas dataframe
+2024-10-21 15:56:47,811 - INFO - Plotting categorical distribution
+2024-10-21 15:57:02,329 - INFO - Plotting categorical distribution
+2024-10-21 15:57:54,265 - INFO - Plotting categorical distribution
+2024-10-21 16:00:12,072 - INFO - Plotting categorical distribution
+2024-10-21 16:01:24,374 - INFO - Plotting categorical distribution
+2024-10-21 16:01:40,498 - INFO - Plotting categorical distribution
+2024-10-21 16:02:30,232 - INFO - Plotting categorical distribution
+2024-10-21 16:02:49,801 - INFO - Plotting categorical distribution
+2024-10-21 16:03:04,289 - INFO - Plotting categorical distribution
+2024-10-21 16:03:28,966 - INFO - Plotting categorical distribution
+2024-10-21 16:04:09,374 - INFO - Plotting categorical distribution
+2024-10-21 16:04:22,717 - INFO - Plotting categorical distribution
+2024-10-21 16:04:28,197 - INFO - Plotting categorical distribution
+2024-10-21 16:05:41,314 - INFO - Plotting categorical distribution
+2024-10-21 16:06:30,832 - INFO - Plotting categorical distribution
+2024-10-21 16:06:41,761 - INFO - Plotting categorical distribution
+2024-10-21 16:06:53,178 - INFO - Plotting categorical distribution
+2024-10-21 16:06:59,780 - INFO - Plotting categorical distribution
+2024-10-21 16:07:36,492 - INFO - Plotting categorical distribution
+2024-10-21 16:07:51,433 - INFO - Plotting categorical distribution
+2024-10-21 16:07:58,993 - INFO - Plotting categorical distribution
+2024-10-21 16:08:01,417 - INFO - Plotting categorical distribution
+2024-10-21 16:08:14,403 - INFO - Plotting categorical distribution
+2024-10-21 16:08:22,166 - INFO - Plotting categorical distribution
+2024-10-21 16:08:32,448 - INFO - Plotting categorical distribution
+2024-10-21 16:08:51,176 - INFO - Plotting categorical distribution
+2024-10-21 16:09:00,114 - INFO - Plotting categorical distribution
+2024-10-21 16:11:32,878 - INFO - Plotting numerical distribution
+2024-10-21 16:11:36,984 - INFO - Numerical distribution plotted
+2024-10-21 16:11:44,084 - INFO - Plotting outlier detection
+2024-10-21 16:11:44,901 - INFO - Outlier detection plotted
+2024-10-21 16:12:10,309 - INFO - Plotting outlier detection
+2024-10-21 16:17:57,726 - INFO - Loading pandas dataframe
+2024-10-21 16:18:10,276 - INFO - Plotting outlier detection
+2024-10-21 16:18:12,129 - INFO - Outlier detection plotted
+2024-10-21 16:18:36,657 - INFO - Converting specified datae column
+2024-10-21 16:18:36,657 - INFO - Converting date column to datetime
+2024-10-21 16:18:36,658 - ERROR - Error analyzing fraud data: string indices must be integers, not 'str'
+2024-10-21 16:19:00,112 - INFO - Converting specified datae column
+2024-10-21 16:19:00,113 - INFO - Converting date column to datetime
+2024-10-21 16:19:00,208 - INFO - Converting date column to datetime
+2024-10-21 16:19:00,293 - INFO - Extracting date information
+2024-10-21 16:19:00,330 - INFO - Extracting date information
+2024-10-21 16:19:00,367 - INFO - Grouping by date and counting transactions
+2024-10-21 16:19:00,374 - INFO - Plotting time series
+2024-10-21 16:19:00,658 - INFO - Extracting hour from date column
+2024-10-21 16:19:00,691 - INFO - Creating pivot table
+2024-10-21 16:19:00,734 - INFO - Plotting heatmap
+2024-10-21 16:26:39,025 - INFO - Loading pandas dataframe
+2024-10-21 16:26:44,614 - INFO - Plotting numerical distribution
+2024-10-21 16:26:50,645 - INFO - Numerical distribution plotted
+2024-10-21 16:27:19,567 - INFO - Plotting numerical distribution
+2024-10-21 16:27:24,697 - INFO - Numerical distribution plotted
