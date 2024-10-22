@@ -196,3 +196,29 @@ def analyze_fraud_data(df, date_columns):
     
     except Exception as e:
         logging.error('Error analyzing fraud data: %s', e)
+
+
+def kdeplot_numerical_distribution(df):
+    # Create either a single image of KDE plots for each numerical column, or plot each KDE one by one. 
+    numerical_columns = df.select_dtypes('number')
+    # Assuming MD_agric_df is already defined with the simulated data
+
+    # Setting up a 5x4 grid of plots
+    fig, axes = plt.subplots(9, 4, figsize=(20, 20))  # Adjust the figure size as needed
+    axes = axes.flatten()  # Flatten the 2D array of axes for easy iteration
+
+    # Plotting a KDE for each column in its respective subplot
+    for i, column in enumerate(numerical_columns.columns):
+        mean_val = numerical_columns[column].mean()
+        axes[i].axvline(mean_val, color='red', linestyle='dashed', linewidth=2)
+        sns.kdeplot(df[column], ax=axes[i], fill=True)
+        axes[i].set_title(f"Distribution of {column}", fontsize=14)
+        axes[i].set_xlabel(column)
+        axes[i].set_ylabel('Density')
+        axes[i].grid(True)
+        
+    for j in range(i + 1, len(axes)):
+        fig.delaxes(axes[j])
+
+    plt.tight_layout()
+    plt.show()
