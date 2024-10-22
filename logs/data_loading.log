@@ -135,3 +135,37 @@
 2024-10-21 18:13:35,755 - INFO - Plotting vertical bar chart
 2024-10-21 18:15:12,851 - INFO - Loading pandas dataframe
 2024-10-21 18:17:29,261 - INFO - Plotting vertical bar chart
+2024-10-21 18:35:06,265 - INFO - Loading pandas dataframe
+2024-10-21 18:35:12,898 - INFO - Plotting numerical distribution
+2024-10-21 18:35:17,922 - INFO - Numerical distribution plotted
+2024-10-21 18:38:04,693 - INFO - Plotting numerical distribution
+2024-10-21 18:38:08,631 - INFO - Numerical distribution plotted
+2024-10-21 18:38:55,928 - INFO - Plotting numerical distribution
+2024-10-21 18:39:00,254 - INFO - Numerical distribution plotted
+2024-10-21 18:39:10,825 - INFO - Plotting numerical distribution
+2024-10-21 18:39:15,653 - INFO - Numerical distribution plotted
+2024-10-21 18:39:26,451 - INFO - Plotting numerical distribution
+2024-10-21 18:39:30,883 - INFO - Numerical distribution plotted
+2024-10-21 18:39:45,235 - INFO - Plotting numerical distribution
+2024-10-21 18:39:49,568 - INFO - Numerical distribution plotted
+2024-10-21 18:39:55,139 - INFO - Plotting numerical distribution
+2024-10-21 18:39:59,168 - INFO - Numerical distribution plotted
+2024-10-21 18:40:10,801 - INFO - Plotting numerical distribution
+2024-10-21 18:40:14,727 - INFO - Numerical distribution plotted
+2024-10-21 18:40:25,628 - INFO - Plotting numerical distribution
+2024-10-21 18:40:29,350 - INFO - Numerical distribution plotted
+2024-10-21 18:40:36,781 - INFO - Plotting numerical distribution
+2024-10-21 18:40:41,267 - INFO - Numerical distribution plotted
+2024-10-22 02:42:59,892 - INFO - Loading pandas dataframe
+2024-10-22 03:09:23,260 - INFO - Loading pandas dataframe
+2024-10-22 03:52:09,490 - INFO - Loading pandas dataframe
+2024-10-22 03:52:18,928 - INFO - Loading pandas dataframe
+2024-10-22 03:56:34,427 - INFO - Loading pandas dataframe
+2024-10-22 04:38:38,635 - INFO - Successfully ploted
+2024-10-22 04:42:39,492 - INFO - Loading pandas dataframe
+2024-10-22 04:44:57,957 - INFO - Loading pandas dataframe
+2024-10-22 04:45:08,432 - INFO - Loading pandas dataframe
+2024-10-22 04:52:48,368 - INFO - Successfully ploted
+2024-10-22 04:53:56,720 - INFO - Successfully ploted
+2024-10-22 04:54:38,146 - INFO - Creating violin plot with data for Amount grouped by Class
+2024-10-22 04:54:40,984 - INFO - Violin plot displayed successfully
