@@ -20,7 +20,7 @@ logging.basicConfig(
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
 
-_DATASET_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../data/raw"))
+_DATASET_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../data/"))
 
 def load_data(file_path):
     '''
