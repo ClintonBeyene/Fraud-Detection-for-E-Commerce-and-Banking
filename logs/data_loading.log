@@ -1,0 +1,20 @@
+2024-10-23 17:44:36,354 - INFO - Loading pandas dataframe
+2024-10-23 17:45:31,743 - INFO - Calculating summary statistics
+2024-10-23 17:45:32,500 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2024-10-23 17:45:32,855 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2024-10-23 17:45:33,073 - INFO - Class distribution successfully plotted
+2024-10-23 17:45:33,845 - INFO - Plotting numerical distribution
+2024-10-23 17:45:46,239 - INFO - Numerical distribution plotted
+2024-10-23 17:45:47,068 - INFO - Plotting categorical distribution
+2024-10-23 17:45:48,152 - INFO - Plotting outlier detection
+2024-10-23 17:45:53,351 - INFO - Outlier detection plotted
+2024-10-23 17:45:54,434 - INFO - Converting specified datae column
+2024-10-23 17:45:54,434 - INFO - Converting date column to datetime
+2024-10-23 17:45:54,454 - INFO - Converting date column to datetime
+2024-10-23 17:45:54,471 - INFO - Extracting date information
+2024-10-23 17:45:54,595 - INFO - Extracting date information
+2024-10-23 17:45:54,692 - INFO - Grouping by date and counting transactions
+2024-10-23 17:45:54,730 - INFO - Plotting time series
+2024-10-23 17:45:55,399 - INFO - Extracting hour from date column
+2024-10-23 17:45:55,455 - INFO - Creating pivot table
+2024-10-23 17:45:55,538 - INFO - Plotting heatmap
