@@ -35,11 +35,6 @@ logging.basicConfig(
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
 
-def extract_time_features(df):
-    df['hour_of_day'] = df['purchase_time'].dt.hour
-    df['day_of_week'] = df['purchase_time'].dt.dayofweek
-    return df
-
 
 def create_device_browser_combination(df):
     df['device_browser_combination'] = df['device_id'] + '_' + df['browser']
@@ -95,12 +90,12 @@ def analyze_fraud_patterns(df: pd.DataFrame):
                                        'Fraud Distribution',
                                        'Transaction Count by Age Group',
                                        'Total Purchase Value by Class',
-                                       'Average Purchase Value by Age Group',
+                                       'Total Purchase Value by Age Group',
                                        'Fraud by Day of Week'))
     
     # Fraud by Hour of Day
-    if 'hour_of_day' in df.columns:
-        hourly_fraud = df[df[target_col] == 1]['hour_of_day'].value_counts().sort_index()
+    if 'purchase_time_hour' in df.columns:
+        hourly_fraud = df[df[target_col] == 1]['purchase_time_hour'].value_counts().sort_index()
         fig.add_trace(
             go.Scatter(x=hourly_fraud.index, y=hourly_fraud.values,
                        mode='lines+markers',
@@ -144,8 +139,8 @@ def analyze_fraud_patterns(df: pd.DataFrame):
         )
         
     # Fraud by Day of Week
-    if 'day_of_week' in df.columns:
-        daily_fraud = df[df[target_col] == 1]['day_of_week'].value_counts().sort_index()
+    if 'purchase_time_day' in df.columns:
+        daily_fraud = df[df[target_col] == 1]['purchase_time_day'].value_counts().sort_index()
         fig.add_trace(
             go.Bar(x=['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
                    y=daily_fraud.values,

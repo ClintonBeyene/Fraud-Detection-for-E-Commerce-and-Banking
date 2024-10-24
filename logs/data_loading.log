@@ -18,3 +18,33 @@
 2024-10-23 17:45:55,399 - INFO - Extracting hour from date column
 2024-10-23 17:45:55,455 - INFO - Creating pivot table
 2024-10-23 17:45:55,538 - INFO - Plotting heatmap
+2024-10-24 01:57:33,740 - INFO - Loading pandas dataframe
+2024-10-24 01:57:33,748 - ERROR - Error loading data: [Errno 2] No such file or directory: 'c:\\Users\\Hp\\Desktop\\Kifiya\\week8\\detection\\data\\raw\\processed/fraud_data_with_country.csv'
+2024-10-24 01:57:33,748 - INFO - Loading pandas dataframe
+2024-10-24 01:57:33,749 - ERROR - Error loading data: [Errno 2] No such file or directory: 'c:\\Users\\Hp\\Desktop\\Kifiya\\week8\\detection\\data\\raw\\processed/creditcard_processed.csv'
+2024-10-24 21:27:27,933 - INFO - Loading pandas dataframe
+2024-10-24 21:27:28,031 - ERROR - Error loading data: [Errno 2] No such file or directory: 'c:\\Users\\Hp\\Desktop\\Kifiya\\week8\\detection\\data\\raw\\processed/fraud_data_with_country.csv'
+2024-10-24 21:27:28,031 - INFO - Loading pandas dataframe
+2024-10-24 21:27:28,031 - ERROR - Error loading data: [Errno 2] No such file or directory: 'c:\\Users\\Hp\\Desktop\\Kifiya\\week8\\detection\\data\\raw\\processed/creditcard_processed.csv'
+2024-10-24 21:28:24,548 - INFO - Loading pandas dataframe
+2024-10-24 21:28:24,548 - ERROR - Error loading data: [Errno 2] No such file or directory: 'c:\\Users\\Hp\\Desktop\\Kifiya\\week8\\detection\\data\\raw\\raw/processed/fraud_data_with_country.csv'
+2024-10-24 21:28:24,548 - INFO - Loading pandas dataframe
+2024-10-24 21:28:24,548 - ERROR - Error loading data: [Errno 2] No such file or directory: 'c:\\Users\\Hp\\Desktop\\Kifiya\\week8\\detection\\data\\raw\\raw/processed/creditcard_processed.csv'
+2024-10-24 21:28:29,764 - INFO - Loading pandas dataframe
+2024-10-24 21:28:29,764 - ERROR - Error loading data: [Errno 2] No such file or directory: 'c:\\Users\\Hp\\Desktop\\Kifiya\\week8\\detection\\data\\raw\\raw/processed/fraud_data_with_country.csv'
+2024-10-24 21:28:29,764 - INFO - Loading pandas dataframe
+2024-10-24 21:28:29,764 - ERROR - Error loading data: [Errno 2] No such file or directory: 'c:\\Users\\Hp\\Desktop\\Kifiya\\week8\\detection\\data\\raw\\raw/processed/creditcard_processed.csv'
+2024-10-24 21:30:12,143 - INFO - Loading pandas dataframe
+2024-10-24 21:30:12,149 - ERROR - Error loading data: [Errno 2] No such file or directory: 'c:\\Users\\Hp\\Desktop\\Kifiya\\week8\\detection\\data\\raw/processed/fraud_data_with_country.csv'
+2024-10-24 21:30:12,149 - INFO - Loading pandas dataframe
+2024-10-24 21:30:12,149 - ERROR - Error loading data: [Errno 2] No such file or directory: 'c:\\Users\\Hp\\Desktop\\Kifiya\\week8\\detection\\data\\raw/processed/creditcard_processed.csv'
+2024-10-24 21:31:38,813 - INFO - Loading pandas dataframe
+2024-10-24 21:31:40,303 - INFO - Loading pandas dataframe
+2024-10-24 21:34:43,383 - INFO - Loading pandas dataframe
+2024-10-24 21:34:44,763 - INFO - Loading pandas dataframe
+2024-10-24 22:35:00,525 - INFO - Loading pandas dataframe
+2024-10-24 22:35:02,413 - INFO - Loading pandas dataframe
+2024-10-24 23:01:06,827 - INFO - Loading pandas dataframe
+2024-10-24 23:01:07,445 - INFO - Loading pandas dataframe
+2024-10-24 23:11:57,567 - INFO - Loading pandas dataframe
+2024-10-24 23:11:58,079 - INFO - Loading pandas dataframe
