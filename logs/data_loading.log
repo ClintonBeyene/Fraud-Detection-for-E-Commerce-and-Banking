@@ -91,3 +91,4 @@
 2024-10-25 18:45:52,845 - INFO - Loading pandas dataframe
 2024-10-25 18:46:09,212 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 2024-10-25 18:46:09,215 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2024-10-25 20:50:14,629 - INFO - Loading pandas dataframe
