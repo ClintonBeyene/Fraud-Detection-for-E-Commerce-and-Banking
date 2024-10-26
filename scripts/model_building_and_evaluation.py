@@ -30,7 +30,6 @@ from sklearn.feature_selection import SelectKBest, f_classif
 from sklearn.metrics import roc_curve, roc_auc_score, RocCurveDisplay, confusion_matrix, classification_report
 from sklearn.model_selection import RepeatedStratifiedKFold, cross_val_score
 
-
 # Set pandas options
 pd.set_option('display.max_columns', 100)
 
@@ -47,15 +46,16 @@ EARLY_STOP = 50
 OPT_ROUNDS = 1000
 VERBOSE_EVAL = 50
 IS_LOCAL = False
-import logging 
-import os 
+
+import logging
+import os
 import sys
 
 # Add the parent directory to the system path
-sys.path.append(os.path.join(os.path.abspath('../')))
+sys.path.append(os.path.join(os.path.abspath('..')))
 
-# Ensure the logs directory exists
-log_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../logs"))
+# Manually set the logs directory
+log_dir = os.path.abspath(os.path.join(os.getcwd(), "../logs"))
 if not os.path.exists(log_dir):
     os.makedirs(log_dir)
 
@@ -66,35 +66,35 @@ logging.basicConfig(
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
 
-def model(classifier, x_train, y_train, x_test, y_test):
-    
-    if isinstance(classifier, Sequential):
-        classifier.fit(x_train, y_train, epochs=10, batch_size=32)
-        prediction = classifier.predict(x_test)
-    else:
-        classifier.fit(x_train, y_train)
-        prediction = classifier.predict(x_test)
-        prediction_proba = classifier.predict_proba(x_test)
-        
-    if isinstance(classifier, Sequential):
-        print("ROC_AUC Score : ", '{0:.2%}'.format(roc_auc_score(y_test, (prediction>0.5).astype(int))))
-    else:
-        print("ROC_AUC Score : ", '{0:.2%}'.format(roc_auc_score(y_test, prediction_proba[:, 1])))
-    
-    if isinstance(classifier, Sequential):
-        fpr, tpr, _ = roc_curve(y_test, (prediction > 0.5).astype(int))
-    else:
-        fpr, tpr, _ = roc_curve(y_test, prediction_proba[:, 1])
-    
+def model_neural_network(classifier, x_train, y_train, x_test, y_test):
+    classifier.fit(x_train, y_train, epochs=10, batch_size=32)
+    prediction = classifier.predict(x_test)
+    print("ROC_AUC Score : ", '{0:.2%}'.format(roc_auc_score(y_test, (prediction > 0.5).astype(int))))
+    fpr, tpr, _ = roc_curve(y_test, (prediction > 0.5).astype(int))
     plt.plot(fpr, tpr)
     plt.plot([0, 1], [0, 1], 'k--')
     plt.xlabel('False Positive Rate')
     plt.ylabel('True Positive Rate')
-    plt.title('ROC_AUC_Plot')
+    plt.title('ROC AUC Plot')
     plt.show()
 
-def model_evaluation(classifier,x_test,y_test):
-    
+def model_other(classifier, x_train, y_train, x_test, y_test):
+    classifier.fit(x_train, y_train)
+    prediction = classifier.predict(x_test)
+    if hasattr(classifier, 'predict_proba'):
+        prediction_proba = classifier.predict_proba(x_test)
+        print("ROC_AUC Score : ", '{0:.2%}'.format(roc_auc_score(y_test, prediction_proba[:, 1])))
+    fpr, tpr, _ = roc_curve(y_test, prediction)
+    if hasattr(classifier, 'predict_proba'):
+        fpr, tpr, _ = roc_curve(y_test, prediction_proba[:, 1])
+    plt.plot(fpr, tpr)
+    plt.plot([0, 1], [0, 1], 'k--')
+    plt.xlabel('False Positive Rate')
+    plt.ylabel('True Positive Rate')
+    plt.title('ROC AUC Plot')
+    plt.show()
+
+def model_evaluation(classifier, x_test, y_test):
     if hasattr(classifier, 'predict_proba'):
         prediction_proba = classifier.predict_proba(x_test)
         prediction = np.argmax(prediction_proba, axis=1)
@@ -105,14 +105,13 @@ def model_evaluation(classifier,x_test,y_test):
     cm = confusion_matrix(y_test, prediction)
     names = ['True Neg', 'False Pos', 'False Neg', 'True Pos']
     counts = [value for value in cm.flatten()]
-    percentages = ['{0:.2%}'.format(value) for value in cm.flatten()/np.sum(cm)]
+    percentages = ['{0:.2%}'.format(value) for value in cm.flatten() / np.sum(cm)]
     labels = [f'{v1}\n{v2}\n{v3}' for v1, v2, v3 in zip(names, counts, percentages)]
     labels = np.asarray(labels).reshape(2, 2)
     sns.heatmap(cm, annot=labels, cmap='Blues', fmt='')
     
     # Classification Report
-    print(classification_report(y_test,prediction))
-
+    print(classification_report(y_test, prediction))
 
 def cross_validation_score(classifier, x_train, y_train):
     if isinstance(classifier, Sequential):
@@ -125,6 +124,6 @@ def cross_validation_score(classifier, x_train, y_train):
             scores.append(classifier.evaluate(X_val_fold, y_val_fold)[1])
         print("Cross Validation Score: ", np.mean(scores))
     else:
-        cv = RepeatedStratifiedKFold(n_splits = 10, n_repeats = 3, random_state = 1)
+        cv = RepeatedStratifiedKFold(n_splits=10, n_repeats=3, random_state=1)
         scores = cross_val_score(classifier, x_train, y_train, cv=cv, scoring='roc_auc')
-        print("Cross Validation Score: ",'{0:.2%}'.format(scores.mean()))
+        print("Cross Validation Score: ", '{0:.2%}'.format(scores.mean()))
