@@ -78,20 +78,53 @@ def model_neural_network(classifier, x_train, y_train, x_test, y_test):
     plt.title('ROC AUC Plot')
     plt.show()
 
+def model(classifier, x_train, y_train, x_test, y_test):
+    if isinstance(classifier, Sequential):
+        classifier.fit(x_train, y_train, epochs=10, batch_size=32, verbose=0)
+        prediction = classifier.predict(x_test)
+        prediction_proba = prediction  # For Sequential models, use prediction directly as proba
+        print("ROC_AUC Score: ", '{0:.2%}'.format(roc_auc_score(y_test, (prediction > 0.5).astype(int))))
+    else:
+        classifier.fit(x_train, y_train)
+        prediction = classifier.predict(x_test)
+        if hasattr(classifier, 'predict_proba'):
+            prediction_proba = classifier.predict_proba(x_test)[:, 1]
+        else:
+            prediction_proba = prediction
+        print("ROC_AUC Score: ", '{0:.2%}'.format(roc_auc_score(y_test, prediction_proba)))
+    
+    fpr, tpr, _ = roc_curve(y_test, prediction_proba)
+
+    # Plot ROC curve
+    plt.figure(figsize=(8, 6))
+    plt.plot(fpr, tpr, color='blue', label='ROC Curve')
+    plt.plot([0, 1], [0, 1], 'k--', label='Random Guessing')
+    plt.xlabel('False Positive Rate')
+    plt.ylabel('True Positive Rate')
+    plt.title('ROC Curve')
+    plt.legend(loc='lower right')
+    plt.show()
+
 def model_other(classifier, x_train, y_train, x_test, y_test):
     classifier.fit(x_train, y_train)
     prediction = classifier.predict(x_test)
+    
     if hasattr(classifier, 'predict_proba'):
         prediction_proba = classifier.predict_proba(x_test)
         print("ROC_AUC Score : ", '{0:.2%}'.format(roc_auc_score(y_test, prediction_proba[:, 1])))
-    fpr, tpr, _ = roc_curve(y_test, prediction)
-    if hasattr(classifier, 'predict_proba'):
         fpr, tpr, _ = roc_curve(y_test, prediction_proba[:, 1])
-    plt.plot(fpr, tpr)
-    plt.plot([0, 1], [0, 1], 'k--')
+    else:
+        print("ROC_AUC Score is not available for this classifier")
+        fpr, tpr, _ = roc_curve(y_test, prediction)
+
+    # Plot ROC curve
+    plt.figure(figsize=(8, 6))
+    plt.plot(fpr, tpr, color='blue', label='ROC Curve')
+    plt.plot([0, 1], [0, 1], 'k--', label='Random Guessing')
     plt.xlabel('False Positive Rate')
     plt.ylabel('True Positive Rate')
-    plt.title('ROC AUC Plot')
+    plt.title('ROC Curve')
+    plt.legend(loc='lower right')
     plt.show()
 
 def model_evaluation(classifier, x_test, y_test):
