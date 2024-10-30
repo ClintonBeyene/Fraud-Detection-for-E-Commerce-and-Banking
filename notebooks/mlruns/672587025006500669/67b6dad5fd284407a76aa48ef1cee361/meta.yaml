@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/Hp/Desktop/Kifiya/week8/Detection/notebooks/mlruns/672587025006500669/67b6dad5fd284407a76aa48ef1cee361/artifacts
+end_time: 1730115036720
+entry_point_name: ''
+experiment_id: '672587025006500669'
+lifecycle_stage: active
+run_id: 67b6dad5fd284407a76aa48ef1cee361
+run_name: Random Forest
+run_uuid: 67b6dad5fd284407a76aa48ef1cee361
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1730115031927
+status: 3
+tags: []
+user_id: Hp

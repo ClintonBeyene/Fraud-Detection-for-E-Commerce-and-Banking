@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="form-container">
+                <h2 class="text-center">Register Transaction and Check Fraud</h2>
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="alert alert-{{ category }}">{{ message }}</div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                <form method="POST" id="registerForm">
+                    <fieldset>
+                        <legend class="text-center">User Information</legend>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="user_id">User ID <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="user_id" name="user_id" required>
+                                <small class="form-text text-muted">Enter the unique identifier for the user.</small>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="signup_time">Signup Time <span class="text-danger">*</span></label>
+                                <input type="datetime-local" class="form-control" id="signup_time" name="signup_time" required>
+                                <small class="form-text text-muted">Select the date and time the user signed up.</small>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <label for="purchase_time">Purchase Time <span class="text-danger">*</span></label>
+                                <input type="datetime-local" class="form-control" id="purchase_time" name="purchase_time" required>
+                                <small class="form-text text-muted">Select the date and time the purchase was made.</small>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend class="text-center">Transaction Information</legend>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="purchase_value">Purchase Value <span class="text-danger">*</span></label>
+                                <input type="number" step="0.01" class="form-control" id="purchase_value" name="purchase_value" required>
+                                <small class="form-text text-muted">Enter the value of the purchase in the currency used.</small>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="device_id">Device ID <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="device_id" name="device_id" required>
+                                <small class="form-text text-muted">Enter the unique identifier for the device used.</small>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="source">Source <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="source" name="source" required>
+                                <small class="form-text text-muted">Enter the source of the transaction (e.g., website, mobile app).</small>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="browser">Browser <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="browser" name="browser" required>
+                                <small class="form-text text-muted">Enter the browser used for the transaction.</small>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend class="text-center">User Details</legend>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="sex">Sex <span class="text-danger">*</span></label>
+                                <select class="form-control" id="sex" name="sex" required>
+                                    <option value="M">Male</option>
+                                    <option value="F">Female</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="age">Age <span class="text-danger">*</span></label>
+                                <input type="number" class="form-control" id="age" name="age" required>
+                                <small class="form-text text-muted">Enter the age of the user.</small>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="ip_address">IP Address <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="ip_address" name="ip_address" required>
+                                <small class="form-text text-muted">Enter the IP address of the user.</small>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="country">Country <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="country" name="country" required>
+                                <small class="form-text text-muted">Enter the country of the user.</small>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Register and Check Fraud</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.getElementById('registerForm').addEventListener('submit', function(event) {
+        const requiredFields = document.querySelectorAll('[required]');
+        let isValid = true;
+
+        requiredFields.forEach(field => {
+            if (!field.value) {
+                field.classList.add('is-invalid');
+                isValid = false;
+            } else {
+                field.classList.remove('is-invalid');
+            }
+        });
+
+        if (!isValid) {
+            event.preventDefault();
+            alert('Please fill in all required fields.');
+        }
+    });
+
+    // Add real-time validation feedback
+    document.querySelectorAll('[required]').forEach(field => {
+        field.addEventListener('input', function() {
+            if (this.value) {
+                this.classList.remove('is-invalid');
+            }
+        });
+    });
+</script>
+{% endblock %}

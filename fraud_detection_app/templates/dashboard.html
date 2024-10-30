@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Fraud Detection Dashboard & EDA{% endblock %}
+
+{% block content %}
+<div class="dashboard-wrapper">
+    {{ dash_app | safe }}
+{% endblock %}
+</div>
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+{% endblock %}

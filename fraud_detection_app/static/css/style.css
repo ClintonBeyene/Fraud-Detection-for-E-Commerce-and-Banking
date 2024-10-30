@@ -1,0 +1,147 @@
+/* Main styles */
+body {
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1;
+}
+
+/* Navigation styles */
+.navbar {
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+/* Card styles */
+.card {
+    transition: transform 0.3s ease;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Form styles */
+.form-control:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+/* Button styles */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* Alert styles */
+.alert {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Footer styles */
+.footer {
+    margin-top: auto;
+    padding: 1rem 0;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 1200px;
+    margin-top: 50px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+legend {
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.text-danger {
+    color: red;
+}
+
+.is-invalid {
+    border-color: red;
+}
+
+button[type="submit"] {
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+legend {
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.text-danger {
+    color: red;
+}
+
+.is-invalid {
+    border-color: red;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -5px;
+    margin-left: -5px;
+}
+
+.form-row > div {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.form-row .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-row .form-group .form-control {
+    width: 100%;
+}
+
+button[type="submit"] {
+    margin-top: 1rem;
+    width: 100%;
+}
