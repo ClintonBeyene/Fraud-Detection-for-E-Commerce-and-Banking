@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/Hp/Desktop/Kifiya/week8/Detection/notebooks/mlruns/672587025006500669/ca534cf0e78e40aaaac529e24671895f/artifacts
+end_time: 1730115012488
+entry_point_name: ''
+experiment_id: '672587025006500669'
+lifecycle_stage: active
+run_id: ca534cf0e78e40aaaac529e24671895f
+run_name: Decision Tree
+run_uuid: ca534cf0e78e40aaaac529e24671895f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1730115007366
+status: 3
+tags: []
+user_id: Hp

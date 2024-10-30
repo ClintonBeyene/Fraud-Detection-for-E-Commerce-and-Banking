@@ -1,2 +1,5 @@
 data
 week8
+notebooks/mlruns/0/dc8c36739677483aa102d882a883aadd/artifacts/random_forest_model/model.pkl
+model/fraud/random_forest_model.pkl
+notebooks/mlruns/0/dc8c36739677483aa102d882a883aadd/artifacts/random_forest_model/model.pkl

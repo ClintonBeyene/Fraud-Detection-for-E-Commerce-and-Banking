@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/Hp/Desktop/Kifiya/week8/Detection/notebooks/mlruns/672587025006500669/263f57635fac4a2daced24c7fc934174/artifacts
+end_time: 1730115089935
+entry_point_name: ''
+experiment_id: '672587025006500669'
+lifecycle_stage: active
+run_id: 263f57635fac4a2daced24c7fc934174
+run_name: Gradient Boosting
+run_uuid: 263f57635fac4a2daced24c7fc934174
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1730115084429
+status: 3
+tags: []
+user_id: Hp

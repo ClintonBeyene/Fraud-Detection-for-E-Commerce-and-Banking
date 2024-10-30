@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Fraud Detection System{% endblock %}
+
+{% block content %}
+<div class="jumbotron">
+    <h1 class="display-4">Welcome to Fraud Detection System</h1>
+    <p class="lead">Detect fraudulent transactions using machine learning.</p>
+    <hr class="my-4">
+    <p>Get started by registering a transaction or exploring our analytics.</p>
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Register Transaction</h5>
+                    <p class="card-text">Register a transaction and analyze it for potential fraud.</p>
+                    <a href="{{ url_for('register') }}" class="btn btn-primary">Register Now</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Explore Analytics</h5>
+                    <p class="card-text">View fraud detection statistics and patterns.</p>
+                    <a href="{{ url_for('dashboard') }}" class="btn btn-primary">View Analytics</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

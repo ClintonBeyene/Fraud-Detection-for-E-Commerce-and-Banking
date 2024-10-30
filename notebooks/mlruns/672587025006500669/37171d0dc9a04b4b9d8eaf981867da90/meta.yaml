@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/Hp/Desktop/Kifiya/week8/Detection/notebooks/mlruns/672587025006500669/37171d0dc9a04b4b9d8eaf981867da90/artifacts
+end_time: 1730115005553
+entry_point_name: ''
+experiment_id: '672587025006500669'
+lifecycle_stage: active
+run_id: 37171d0dc9a04b4b9d8eaf981867da90
+run_name: Logistic Regression
+run_uuid: 37171d0dc9a04b4b9d8eaf981867da90
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1730114990883
+status: 3
+tags: []
+user_id: Hp
