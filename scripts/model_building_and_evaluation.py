@@ -67,7 +67,7 @@ logging.basicConfig(
 )
 
 def model_neural_network(classifier, x_train, y_train, x_test, y_test):
-    classifier.fit(x_train, y_train, epochs=10, batch_size=32)
+    classifier.fit(x_train, y_train, epochs=10, batch_size=32, verbose=0)
     prediction = classifier.predict(x_test)
     print("ROC_AUC Score : ", '{0:.2%}'.format(roc_auc_score(y_test, (prediction > 0.5).astype(int))))
     fpr, tpr, _ = roc_curve(y_test, (prediction > 0.5).astype(int))

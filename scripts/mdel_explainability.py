@@ -29,43 +29,58 @@ logging.basicConfig(
 )
 
 def shap_explainability(model, X_train, X_test):
+    # Turn off interactive mode in Matplotlib
+    plt.ioff()
+
     # Create a SHAP explainer
     masker = shap.maskers.Independent(X_train)
     shap_explainer = shap.Explainer(model.predict_proba, masker)
     
     # Get SHAP values for the test data
-    shap_values = shap_explainer(X_test)
+    with shap.utils.show_progress(False):
+        shap_values = shap_explainer(X_test)
     
     # SHAP summary plot
-    shap.plots.beeswarm(shap_values[:, :, 0])
+    shap.plots.beeswarm(shap_values[:, :, 0], show=False)
+    plt.title("SHAP Summary Plot")
+    plt.show()
     
     # SHAP force plot
-    shap.plots.force(shap_values[0, :, 0])
+    shap.plots.force(shap_values[0, :, 0], matplotlib=True, show=False)
+    plt.title("SHAP Force Plot for the First Instance")
+    plt.show()
     
     # SHAP dependence plot
-    shap.plots.scatter(shap_values[:, :, 0])
+    shap.plots.scatter(shap_values[:, :, 0], color=shap_values, show=False)
 
 
 def shap_explainability_neural(model, X_train, X_test):
-    os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+    os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'  # Suppress TensorFlow's verbose output
+    # Turn off interactive mode in matplotlib 
     plt.ioff()
 
     # Create a SHAP explainer
     masker = shap.maskers.Independent(X_train)
-    model_proba = lambda x: sigmoid(model.predict(x))
+    model_proba = lambda x: sigmoid(model.predict(x, verbose=0))
     shap_explainer = shap.Explainer(model_proba, masker, algorithm='permutation', nsamples=100, verbose=0)
     
     # Get SHAP values for the test data
     shap_values = shap_explainer(X_test)
     
     # SHAP summary plot
-    shap.plots.beeswarm(shap_values)
+    shap.plots.beeswarm(shap_values, show=False)
+    plt.title("SHAP Summary Plot")
+    plt.show()
     
     # SHAP force plot
-    shap.plots.force(shap_values[0,:])
+    shap.plots.force(shap_values[0, :], matplotlib=True, show=False)
+    plt.title("SHAP Force Plot for the First Instance")
+    plt.show()
     
     # SHAP dependence plot
-    shap.plots.scatter(shap_values[:, "feature_name"],  ylabel="SHAP value\n(higher means more likely to fraud)")
+    shap.plots.scatter(shap_values[:, 0], ylabel="SHAP value\n(higher means more likely to fraud)", show=False)
+    plt.title("SHAP Dependence Plot for the First Feature")
+    plt.show()
     
 def lime_explainability(model, X_train, X_test):
     # Convert X_train to a pandas DataFrame
@@ -79,3 +94,26 @@ def lime_explainability(model, X_train, X_test):
     
     # LIME feature importance plot
     lime_explanation.as_pyplot_figure()
+    plt.title("LIME Feature Importance Plot for the First Instance")
+    plt.show()
+
+
+def lime_explainability_neural(model, X_train, X_test):
+    # Convert X_train to a pandas DataFrame
+    X_train_df = pd.DataFrame(X_train)
+    
+    # Create a LIME explainer
+    lime_explainer = LimeTabularExplainer(X_train_df.values, feature_names=X_train_df.columns, class_names=["Not Fraud", "Fraud"], discretize_continuous=True)
+    
+    # Define a function to predict probabilities
+    def predict_proba(X):
+        predictions = model.predict(X)
+        return np.array([[(1 - pred[0]), pred[0]] for pred in predictions])
+    
+    # Get LIME explanations for the test data
+    lime_explanation = lime_explainer.explain_instance(X_test[0], predict_proba, num_features=5)
+    
+    # LIME feature importance plot
+    lime_explanation.as_pyplot_figure()
+    plt.title("LIME Feature Importance Plot for the First Instance")
+    plt.show()
